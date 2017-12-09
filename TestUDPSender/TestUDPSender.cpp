@@ -1,8 +1,11 @@
 #include <Windows.h>
 #include <iostream>
+<<<<<<< HEAD
 #include <string>
 
 using namespace std;
+=======
+>>>>>>> 6076f858bbcf53d50bff68a32c680e959bd43afa
 
 #pragma comment(lib,"ws2_32") 
 
@@ -27,7 +30,10 @@ int main(void)
 		const std::string message("HELLO");
 		i++;
 		sendto(socketHandle, message.c_str(), (int)message.size(), 0, (struct sockaddr *) &destination, addressSize);
+<<<<<<< HEAD
 		cout << "Me: " << message.substr(0, (int)message.size()) << endl;
+=======
+>>>>>>> 6076f858bbcf53d50bff68a32c680e959bd43afa
 		Sleep(2000);
 	}
 

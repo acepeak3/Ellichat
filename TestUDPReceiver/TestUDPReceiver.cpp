@@ -33,7 +33,11 @@ int main(void)
 
 		int count = recvfrom(socketHandle, &message[0], 1024, 0, (sockaddr *)&remoteAddress, &remoteAddressSize);
 
+<<<<<<< HEAD
 		std::cout << inet_ntoa(remoteAddress.sin_addr) << ": "<< message.substr(0, count) <<endl;
+=======
+		std::cout << message.substr(0, count) << " from "<< inet_ntoa(remoteAddress.sin_addr)<<endl;
+>>>>>>> 6076f858bbcf53d50bff68a32c680e959bd43afa
 	}
 
 	closesocket(socketHandle);

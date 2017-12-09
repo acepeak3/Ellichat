@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+<<<<<<< HEAD
 VisualStudioVersion = 15.0.27130.2003
+=======
+VisualStudioVersion = 15.0.27004.2009
+>>>>>>> 6076f858bbcf53d50bff68a32c680e959bd43afa
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "EllichatServer", "EllichatServer\EllichatServer.vcxproj", "{7AAFAEF2-FC1F-4A8B-911F-20B5F4D32E4E}"
 EndProject
@@ -11,12 +15,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestUDPSender", "TestUDPSen
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestUDPReceiver", "TestUDPReceiver\TestUDPReceiver.vcxproj", "{1F23877D-6169-4EA0-A80B-66046514B5A8}"
 EndProject
+<<<<<<< HEAD
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleUDPNode", "SimpleUDPNode\SimpleUDPNode.vcxproj", "{68108CFC-87AB-4C4F-8910-4D55C64D2004}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BigArifmetic", "BigArifmetic\BigArifmetic.vcxproj", "{83B4270C-D860-4259-8120-EC70EC65D6F6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestBigNumber", "TestBigNumber\TestBigNumber.vcxproj", "{6C0C8F52-D76A-4473-BB72-5742443C6812}"
 EndProject
+=======
+>>>>>>> 6076f858bbcf53d50bff68a32c680e959bd43afa
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -57,6 +64,7 @@ Global
 		{1F23877D-6169-4EA0-A80B-66046514B5A8}.Release|x64.Build.0 = Release|x64
 		{1F23877D-6169-4EA0-A80B-66046514B5A8}.Release|x86.ActiveCfg = Release|Win32
 		{1F23877D-6169-4EA0-A80B-66046514B5A8}.Release|x86.Build.0 = Release|Win32
+<<<<<<< HEAD
 		{68108CFC-87AB-4C4F-8910-4D55C64D2004}.Debug|x64.ActiveCfg = Debug|x64
 		{68108CFC-87AB-4C4F-8910-4D55C64D2004}.Debug|x64.Build.0 = Debug|x64
 		{68108CFC-87AB-4C4F-8910-4D55C64D2004}.Debug|x86.ActiveCfg = Debug|Win32
@@ -81,6 +89,8 @@ Global
 		{6C0C8F52-D76A-4473-BB72-5742443C6812}.Release|x64.Build.0 = Release|x64
 		{6C0C8F52-D76A-4473-BB72-5742443C6812}.Release|x86.ActiveCfg = Release|Win32
 		{6C0C8F52-D76A-4473-BB72-5742443C6812}.Release|x86.Build.0 = Release|Win32
+=======
+>>>>>>> 6076f858bbcf53d50bff68a32c680e959bd43afa
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
