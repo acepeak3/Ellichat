@@ -29,7 +29,7 @@ void listenMessages()
 
 		int count = recvfrom(receiveSocket, &message[0], 1024, 0, (sockaddr *)&remoteAddress, &remoteAddressSize);
 
-		std::cout << "listener: " << inet_ntoa(remoteAddress.sin_addr) << ": " << message.substr(0, count) << "\n";
+		std::cout << inet_ntoa(remoteAddress.sin_addr) << ": " << message.substr(0, count) << "\n";
 	}
 
 	closesocket(receiveSocket);
@@ -37,6 +37,9 @@ void listenMessages()
 
 int main(void)
 {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
 	WSADATA wsa;
 
 	WSAStartup(MAKEWORD(2, 2), &wsa);
@@ -52,17 +55,15 @@ int main(void)
 	destination.sin_port = htons(3038);
 	destination.sin_addr.S_un.S_addr = inet_addr("10.0.0.58");
 
-	size_t i = 0;
 
-	Sleep(250);
+	std::string message;
 
 	while (true)
 	{
-		const std::string message("Hello from 10.0.0.60");
-		i++;
+		std::getline(std::cin, message);
 		sendto(sendSocket, message.c_str(), (int)message.size(), 0, (struct sockaddr *) &destination, addressSize);
 		std::cout << "Me: " << message << "\n";
-		Sleep(500);
+		Sleep(2000);
 	}
 
 	closesocket(sendSocket);
