@@ -2,12 +2,28 @@
 
 BigNumber::BigNumber()
 {
-	for (auto block = blocks_.begin(); block != blocks_.end(); block++)	*block = 0;
+	for (auto block = blocks_.begin(); block != blocks_.end(); block++)
+	{
+		*block = 0;
+	}
+}
+
+BigNumber::BigNumber(const uint32_t _number)
+{
+	for (auto block = blocks_.begin(); block != blocks_.end(); block++)
+	{
+		*block = 0;
+	}
+
+	blocks_[0] = _number;
 }
 
 BigNumber::BigNumber(const std::string _numberString)
 {
-	for (auto block = blocks_.begin(); block != blocks_.end(); block++)	*block = 0;
+	for (auto block = blocks_.begin(); block != blocks_.end(); block++)
+	{
+		*block = 0;
+	}
 
 	size_t
 		stringSize = _numberString.size(),
@@ -34,14 +50,15 @@ BigNumber::BigNumber(const std::string _numberString)
 	}
 }
 
-string BigNumber::toString() const
+std::string BigNumber::toString() const
 {
-	string result;
+	std::string result;
 
-	for (auto block = blocks_.begin(); block != blocks_.end(); block++)
+	for (size_t i = 0; i < blockCount; i++)
 	{
-		stringstream sstream;
-		sstream << setw(8) << setfill('0') << hex << *block;
+		std::stringstream sstream;
+		sstream << std::setw(8) << std::setfill('0') << std::hex << blocks_[i];
+
 		result = sstream.str() + " " + result;
 	}
 

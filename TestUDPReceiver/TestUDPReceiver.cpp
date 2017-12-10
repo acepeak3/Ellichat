@@ -2,10 +2,7 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 #pragma comment(lib,"ws2_32") 
-
 
 int main(void)
 {
@@ -17,7 +14,7 @@ int main(void)
 	sockaddr_in localAddress;
 
 	localAddress.sin_family = AF_INET;
-	localAddress.sin_addr.s_addr = inet_addr("10.0.0.60");
+	localAddress.sin_addr.s_addr = inet_addr("10.0.0.58");
 	localAddress.sin_port = htons(3038);
 
 	bind(socketHandle, (SOCKADDR *)(&localAddress), sizeof(localAddress));
@@ -25,6 +22,7 @@ int main(void)
 	sockaddr_in remoteAddress;
 
 	remoteAddress.sin_family = AF_INET;
+
 	int remoteAddressSize = sizeof(remoteAddress);
 
 	while (true)
@@ -33,11 +31,7 @@ int main(void)
 
 		int count = recvfrom(socketHandle, &message[0], 1024, 0, (sockaddr *)&remoteAddress, &remoteAddressSize);
 
-<<<<<<< HEAD
-		std::cout << inet_ntoa(remoteAddress.sin_addr) << ": "<< message.substr(0, count) <<endl;
-=======
-		std::cout << message.substr(0, count) << " from "<< inet_ntoa(remoteAddress.sin_addr)<<endl;
->>>>>>> 6076f858bbcf53d50bff68a32c680e959bd43afa
+		std::cout << message.substr(0, count) << " from " << inet_ntoa(remoteAddress.sin_addr) << "\n";
 	}
 
 	closesocket(socketHandle);

@@ -1,38 +1,81 @@
 #include <iostream>
-#include "../BigArifmetic/BigNumber.h"
 #include "../BigArifmetic/BigArifmetic.h"
 
 int main()
 {
+
+	/*
+	BigNumber number("543ee4525000000000000000ddddddddddddddddddddd12f");
+
+	std::cout << number.toString() << "\n";
+	*/
+
+	/*
 	BigNumber
-		number1("51"),
-		number2("7");
+	number1("5555ff6543245465354aaaaddddd45455555ff6543245465354aaaaddddd454545ddddd56654ff33335555ff6543245465354aaaaddddd454545ddddd56654ff333345ddddd56654ff3333"),
+	number2("dd11213213250000024545454abcde626eeee52341654dd11213213250000024545454abcde626eeee52341654254523255555554d254523255555554d");
+
+	BigNumber number3 = number1 * number2;
+
+	std::cout << number3.toString() << "\n";
+	*/
+
+	/*
+	BigNumber
+	number1("1000000000000000000000000000000000000000000000000000000000000"),
+	number2("1");
+
+	BigNumber number3 = number1 - number2;
+
+	std::cout << number3.toString() << "\n";
+	*/
+	/*
+	BigNumber
+	number1("2544647abcccc242ff881118dee111111111111111e"),
+	number2("654445dfdfdfdf4545fdf45fd555"),
+	number3("77777777777");
+
+	BigNumber number4 = number1 * number2 + number3;
+
+	std::cout << number4.toString() << "\n";
+
+	BigNumber number5 = number4 % number2;
+
+	std::cout << number5.toString() << "\n";
+	*/
+
+	/*
+	BigNumber
+	number1("55ffff2332334888891dacb4122214"),
+	number2("aaaaaaaaaaaaaaaaaaaaaaaaa");
+
+	BigNumber number3 = number1 * number2;
+
+	std::cout << number3.toString() << "\n";
+
+	BigNumber number4 = number3 / number1;
+
+	std::cout << number4.toString() << "\n";
+	*/
+
+	BigNumber
+		number("d"),  //13
+		modulo("11"); //17
 
 
-	//	number1("5a54afbc987df513ddf59bc7895ffc626cda"),
-	//	number2("a5649865bcdfbc987df513ddf59bc7f5156");
+					  // 1/13 mod 17 = 4
 
-	//	number1("aaaaddd8d78745454654654564dcbbdaaaaddd8d7874545465745454654654564dcbbbbdddcc2fa56aaaf4654564dcbbbbdddcc2fa56aaafcccc78ddddaaaaddd8d78745454654654564dcbbbbdddcc2fa56aaafffaaaaddd8d78745454654654564dcbbbbdddcaaddd8d78745454654654564dcbbbbdddcc2fa56aaafffaaaaddd8d78745454654654564dcbbbbdddcc2fa56aaaffdaaaaddd8d7874545465c2fa56aaaffdaaaaddd8d78745454654654564dcbbbbdddcc2fa56aaafffaaaaddd8d787454546546545"),
-	//	number2("4654564dcbbbbdddcc2fa56aaafcccc78ddddaaaadd4654564dcbbbbdddccaaaaddd8d78745454654654564dcbaaddd8d78745454654654564dcbbbbdddcc2fa568ddddaaaaddd8d78745454654654564dcbbbbdddccaaafffaaaaddd8d78745454654654564dcbbbbdddcc2fa56aaaffdaaaaddd8d7874545465bbbdddcc2fa56aaaf4654566aaafffaaaaddd8d78745454654654564dcbbbbdddcc2fa56aaaffdaaaaddd8dbdddcc2fa56aaaffdaaaaddd8d7bdddcc2fa56aaaffdaaaaddd8d77f");
+	BigNumber inverted = inverse(number, modulo);
 
-	//cout << number.toString() << endl;
-
-	BigNumber number3 = number1 + number2,
-		number4 = number1 - number2,
-		number5 = number1 * number2,
-		number6 = number1 % number2;
+	std::cout << inverted.toString() << "\n";
 
 
-	cout << number3.toString() << endl;
-	cout << number4.toString() << endl;
-	cout << number5.toString() << endl;
-	cout << number6.toString() << endl;
+	// https://safecurves.cr.yp.to/
+	// curve M-383
+	// y^2 = x^3+2065150x^2+x 
+	// mod 2^383 - 187
 
-
-	cout << (number1 == number2 ? "yes" : "no") << endl;
-	cout << (number1 > number2 ? "yes" : "no") << endl;
-	cout << (number1 < number2 ? "yes" : "no") << endl;
-
+	// 383 = 32*12 - 1;
 
 	system("pause");
 }
