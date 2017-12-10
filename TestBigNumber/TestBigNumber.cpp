@@ -5,8 +5,8 @@
 int main()
 {
 	BigNumber
-		number1("7"),
-		number2("3");
+		number1("51"),
+		number2("7");
 
 
 	//	number1("5a54afbc987df513ddf59bc7895ffc626cda"),
@@ -19,11 +19,15 @@ int main()
 
 	BigNumber number3 = number1 + number2,
 		number4 = number1 - number2,
-		number5 = number1 * number2;
+		number5 = number1 * number2,
+		number6 = number1 % number2;
+
 
 	cout << number3.toString() << endl;
 	cout << number4.toString() << endl;
 	cout << number5.toString() << endl;
+	cout << number6.toString() << endl;
+
 
 	cout << (number1 == number2 ? "yes" : "no") << endl;
 	cout << (number1 > number2 ? "yes" : "no") << endl;

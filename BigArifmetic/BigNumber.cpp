@@ -2,12 +2,12 @@
 
 BigNumber::BigNumber()
 {
-	for (auto digit = digits_.begin(); digit != digits_.end(); digit++)	*digit = 0;
+	for (auto block = blocks_.begin(); block != blocks_.end(); block++)	*block = 0;
 }
 
 BigNumber::BigNumber(const std::string _numberString)
 {
-	for (auto digit = digits_.begin(); digit != digits_.end(); digit++)	*digit = 0;
+	for (auto block = blocks_.begin(); block != blocks_.end(); block++)	*block = 0;
 
 	size_t
 		stringSize = _numberString.size(),
@@ -30,7 +30,7 @@ BigNumber::BigNumber(const std::string _numberString)
 		}
 
 		std::string digitString = _numberString.substr(stringSize - startPosition, digitCount);
-		digits_[i] = std::stoll(digitString, 0, 16);
+		blocks_[i] = std::stoll(digitString, 0, 16);
 	}
 }
 
@@ -38,12 +38,23 @@ string BigNumber::toString() const
 {
 	string result;
 
-	for (auto digit = digits_.begin(); digit != digits_.end(); digit++)
+	for (auto block = blocks_.begin(); block != blocks_.end(); block++)
 	{
 		stringstream sstream;
-		sstream << setw(8) << setfill('0') << hex << *digit;
+		sstream << setw(8) << setfill('0') << hex << *block;
 		result = sstream.str() + " " + result;
 	}
 
 	return result;
+}
+
+uint32_t BigNumber::highestBlock(size_t &_highestBlockIndex) const
+{
+	int i = BigNumber::blockCount - 1;
+
+	while ((i >= 0) && (blocks_[i] == 0)) i--;
+
+	_highestBlockIndex = i;
+
+	return (i >= 0 ? blocks_[i] : blocks_[0]);
 }
